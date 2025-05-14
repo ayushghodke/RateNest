@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+//Admin Stores Page
 import {
   Container,
   Typography,
