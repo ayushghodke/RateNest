@@ -17,6 +17,7 @@ import AdminUsers from './pages/AdminUsers';
 import AdminUserDetail from './pages/AdminUserDetail';
 import AdminUserForm from './pages/AdminUserForm';
 import AdminStores from './pages/AdminStores';
+import AdminStoreForm from './pages/AdminStoreForm';
 
 const theme = createTheme({
   palette: {
@@ -109,6 +110,30 @@ function App() {
             element={
               <ProtectedRoute requiredRole="admin">
                 <AdminStores />
+              </ProtectedRoute>
+            } 
+          />
+          <Route 
+            path="/admin/add-store" 
+            element={
+              <ProtectedRoute requiredRole="admin">
+                <AdminStoreForm />
+              </ProtectedRoute>
+            } 
+          />
+          <Route 
+            path="/admin/stores/edit/:id" 
+            element={
+              <ProtectedRoute requiredRole="admin">
+                <AdminStoreForm />
+              </ProtectedRoute>
+            } 
+          />
+          <Route 
+            path="/admin/stores/:id" 
+            element={
+              <ProtectedRoute requiredRole="admin">
+                <StoreDetails isAdmin={true} />
               </ProtectedRoute>
             } 
           />
